@@ -42,8 +42,13 @@
         alt_ctrl_esc: macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;  /* Must match the binding definition */
+        wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&kp LALT &kp LCTRL &kp ESC>;
+            bindings = <
+                &macro_press &kp LALT &kp LCTRL
+                &macro_tap &kp ESC
+                &macro_release &kp LCTRL &kp LALT
+            >;
         };
     };
 
@@ -176,7 +181,7 @@
 //              |     |      |      |      |    | X|    |     |      |         |         |
             bindings = <
 &none &none &none  &none  &none  &none                   &none &none   &none     &none      &none     &none
-&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
+&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc &none
 &none &none &none  &none  &none  &none                   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
 &none &none &none  &none  &none  &none      &none  &none &none &kp PG_DN &none   &kp PG_UP  &none     &none
 
