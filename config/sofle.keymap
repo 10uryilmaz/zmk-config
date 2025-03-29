@@ -176,7 +176,7 @@
 //              |     |      |      |      |    | X|    |     |      |         |         |
             bindings = <
 &none &none &none  &none  &none  &none                   &none &none   &none     &none      &none     &none
-&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc 0 &none
+&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc &none
 &none &none &none  &none  &none  &none                   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
 &none &none &none  &none  &none  &none      &none  &none &none &kp PG_DN &none   &kp PG_UP  &none     &none
 
