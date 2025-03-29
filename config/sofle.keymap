@@ -67,7 +67,7 @@
                    &kp LCTRL &none &kp LALT &mt LGUI SPACE &lt 6 RET    &kp BSPC  &lt 4 SPACE &kp TILDE   &none  &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN  &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         lower_layer {
@@ -157,7 +157,8 @@
             bindings = <
 &none &none &none  &none  &none  &none                   &none  &kp DQT    &kp SQT     &none      &none &none
 &none &none &none  &none  &none  &none                   &none  &kp DQT    &kp SQT     &none      &none &none
-&none &none &none  &none  &none  &none                   &none  &kp DQT    &kp SQT     &none     &none &none
+&none &none &none  &none  &none  &none                   &none  &kp DQT    &kp SQT     &none     &none &n
+one
 &none &none &none  &none  &none  &none      &none  &none &none  &kp DQT    &kp SQT     &none     &none &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
@@ -176,7 +177,7 @@
 //              |     |      |      |      |    | X|    |     |      |         |         |
             bindings = <
 &none &none &none  &none  &none  &none                   &none &none   &none     &none      &none     &none
-&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc &none
+&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc 0 &none
 &none &none &none  &none  &none  &none                   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
 &none &none &none  &none  &none  &none      &none  &none &none &kp PG_DN &none   &kp PG_UP  &none     &none
 
