@@ -38,13 +38,13 @@
     };
 
     behaviors {
-        alt_ctrl_esc: macro {
-            compatible = "zmk,behavior-macro";
-            label = "ALT+CTRL+ESC";
-            tap-ms = <0>; /* No delay between press and release */
-            bindings = <&kp LALT &kp LCTL &kp ESC>;
+            alt_ctrl_esc: macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <1>;  /* Required property added */
+                tap-ms = <0>;
+                bindings = <&kp LALT &kp LCTL &kp ESC>;
+            };
         };
-    };
 
     keymap {
         compatible = "zmk,keymap";
