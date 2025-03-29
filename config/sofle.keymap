@@ -49,9 +49,9 @@
             bindings = <
 &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp EQUAL
-&kp CAPS   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp FSLH
+&kp CAPS   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K)     &kp L    &kp SEMI &kp FSLH
 &kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                   &kp LCTRL &none &kp LALT &mt LGUI SPACE &kp RET    &kp BSPC  &lt 1 SPACE &kp TILDE   &none  &none
+                   &kp LCTRL &none &kp LALT &mt LGUI SPACE &kp RET    &kp BSPC  &lt 4 SPACE &kp TILDE   &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -116,16 +116,16 @@
         chars_layer {
             display-name = "chars";
 // ------------------------------------------------------------------------------------------------------------
-// |      |     |     |      |      |      |            |  <  |  '   |   "   |   >   |      |   |
-// |      |     |     |      |      |      |            |  (  |  '   |   "   |   )   |      |   |
-// |      |     |     |      |      |      |            |  [  |  '   |   "   |   ]   |      |   |
-// |      |     |     |      |      |      |    | X|    |  {  |  '   |   "   |   }   |      |   |
+// |      |     |     |      |      |      |            |  <  |  "   |   '   |   >   |      |   |
+// |      |     |     |      |      |      |            |  (  |  "   |   '   |   )   |      |   |
+// |      |     |     |      |      |      |            |  [  |  "   |   '   |   ]   |      |   |
+// |      |     |     |      |      |      |    | X|    |  {  |  "   |   '   |   }   |      |   |
 //              |     |      |      |      |    | X|    |     |      |       |       |
             bindings = <
-&none &none &none  &none  &none  &none                   &kp LT      &kp SQT    &kp DQT     &kp GT       &none &none
-&none &none &none  &none  &none  &none                   &kp KP_LPAR &kp SQT    &kp DQT     &kp KP_RPAR  &none &none
-&none &none &none  &none  &none  &none                   &kp LBKT    &kp SQT    &kp DQT     &kp RBKT     &none &none
-&none &none &none  &none  &none  &none      &none  &none &kp LBRC    &kp SQT    &kp DQT     &kp RBRC     &none &none
+&none &none &none  &none  &none  &none                   &kp LT      &kp DQT    &kp SQT     &kp GT       &none &none
+&none &none &none  &none  &none  &none                   &kp KP_LPAR &kp DQT    &kp SQT     &kp KP_RPAR  &none &none
+&none &none &none  &none  &none  &none                   &kp LBKT    &kp DQT    &kp SQT     &kp RBKT     &none &none
+&none &none &none  &none  &none  &none      &none  &none &kp LBRC    &kp DQT    &kp SQT     &kp RBRC     &none &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
             >;
