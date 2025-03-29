@@ -27,13 +27,22 @@
 };
 
 / {
-
+    
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
         adjust_layer {
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
+        };
+    };
+
+    behaviors {
+        alt_ctrl_esc: macro {
+            compatible = "zmk,behavior-macro";
+            label = "ALT+CTRL+ESC";
+            tap-ms = <0>; /* No delay between press and release */
+            bindings = <&kp LALT &kp LCTL &kp ESC>;
         };
     };
 
@@ -53,7 +62,7 @@
 &kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp EQUAL
 &kp CAPS   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K    &kp L    &kp SEMI &kp BSLH
 &kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                   &kp LCTRL &none &kp LALT &mt LGUI SPACE &kp RET    &kp BSPC  &lt 4 SPACE &kp TILDE   &none  &none
+                   &kp LCTRL &none &kp LALT &mt LGUI SPACE &lt 6 RET    &kp BSPC  &lt 4 SPACE &kp TILDE   &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -145,7 +154,7 @@
 //              |     |      |      |      |    | X|    |     |      |       |       |
             bindings = <
 &none &none &none  &none  &none  &none                   &kp LT      &kp DQT    &kp SQT     &kp GT       &none &none
-&none &none &none  &none  &none  &none                   &kp LPAR &kp DQT    &kp SQT     &kp RPAR  &none &none
+&none &none &none  &none  &none  &none                   &kp LPAR    &kp DQT    &kp SQT     &kp RPAR  &none &none
 &none &none &none  &none  &none  &none                   &kp LBKT    &kp DQT    &kp SQT     &kp RBKT     &none &none
 &none &none &none  &none  &none  &none      &none  &none &kp LBRC    &kp DQT    &kp SQT     &kp RBRC     &none &none
 
@@ -158,13 +167,13 @@
         arrows_layer {
             display-name = "arrows";
 // ------------------------------------------------------------------------------------------------------------
-// |      |     |     |      |      |      |            |     | RET  |  up   | BACKSP|      |   |
+// |      |     |     |      |      |      |            |     | RET  |  up   | BACKSP| DOCK |   |
 // |      |     |     |      |      |      |            |     | left |  down | right | RSHFT|   |
 // |      |     |     |      |      |      |            |     | SDN  |       | SUP   |      |   |
 // |      |     |     |      |      |      |    | X|    |     |      |       |       |      |   |
 //              |     |      |      |      |    | X|    |     |      |       |       |
             bindings = <
-&none &none &none  &none  &none  &none                   &none &kp RET    &kp UP     &kp BSPC   &none &none
+&none &none &none  &none  &none  &none                   &none &kp RET    &kp UP     &kp BSPC   &alt_ctrl_esc &none
 &none &none &none  &none  &none  &none                   &none &kp LEFT   &kp DOWN   &kp RIGHT    &kp RSHFT &none
 &none &none &none  &none  &none  &none                   &none &kp DQT    &kp SQT    &kp RBKT     &none &none
 &none &none &none  &none  &none  &none      &none  &none &none &kp DQT    &kp SQT    &kp RBRC     &none &none
