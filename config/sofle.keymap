@@ -14,6 +14,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define CHARS 4
 
 &led_strip {
        chain-length = <36>;
@@ -42,15 +43,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |   ESC   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | MINUS |
 // |   TAB   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | EQUAL |
-// |   SHIFT |  A  |  S  |  D   |  F   |  G   |  br+-       vol+- |  H   |  J    |  K    |  L   |   ;   | SHIFT |
-// |   CTRL  |  Z  |  X  |  C   |  V   |  B   |  BR0   | X|  MUTE |  N   |  M    |  ,    |  .   |   /   | SQT   |
+// |   SHIFT |  A  |  S  |  D   |  F   |  G   |  br+-       vol+- |  H   |  J    |  K    |  L   |   ;   | FSLH  |
+// |   CTRL  |  Z  |  X  |  C   |  V   |  B   |  BR0   | X|  MUTE |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                 |     |      | ALT  |SP&CM | ENT&M1 | X|BSP&M4 | SP&M3| ~&M2  |       |      |
             bindings = <
 &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp EQUAL
-&kp LSHFT   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp RSHFT
-&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp SQT
-                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &lt 1 TILDE   &none  &none
+&kp CAPS   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp FSLH
+&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                 &kp LCTRL &none &kp LALT &mo LGUI SPACE  &kp RET    &kp BKSPC   &lt 1 SPACE &kp TILDE   &none  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -112,5 +113,44 @@
             >;
         };
 
+        chars_layer {
+            display-name = "chars";
+// ------------------------------------------------------------------------------------------------------------
+// |      |     |     |      |      |      |            |  "  |  (   |   '   |   )   |      |   |
+// |      |     |     |      |      |      |            |  "  |  <   |   '   |   >   |      |   |
+// |      |     |     |      |      |      |            |  "  |  [   |   '   |   ]   |      |   |
+// |      |     |     |      |      |      |    | X|    |  "  |  {   |   '   |   }   |      |   |
+//              |     |      |      |      |    | X|    |  "  |      |       |       |
+            bindings = <
+&kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp EQUAL
+&kp LSHFT   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp RSHFT
+&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp SQT
+                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &lt 1 TILDE   &none  &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+//        empty_layer {
+//            display-name = "empty";
+// // ------------------------------------------------------------------------------------------------------------
+// // |      |     |     |      |      |      |            |     |      |       |      |       |   |
+// // |      |     |     |      |      |      |            |     |      |       |      |       |   |
+// // |      |     |     |      |      |      |            |     |      |       |      |       |   |
+// // |      |     |     |      |      |      |    | X|    |     |      |       |      |       |   |
+// //              |     |      |      |      |    | X|    |     |      |       |      |
+//            bindings = <
+// &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+// &kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp EQUAL
+// &kp LSHFT   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp RSHFT
+// &kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp SQT
+//                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &lt 1 TILDE   &none  &none
+//             >;
+//
+//             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+//         };
+
     };
 };
+
