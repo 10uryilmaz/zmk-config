@@ -149,16 +149,16 @@
         mouse_layer {
             display-name = "mouse";
 // ------------------------------------------------------------------------------------------------------------
+// |      |     |     |      |      |      |            |     |      |       |       |      |   |
 // |      |     |     |      |      |      |            |     | lclck|  up   | rclck |      |   |
 // |      |     |     |      |      |      |            |     | left |  down | right |lclck |   |
-// |      |     |     |      |      |      |            |     | SDN  |       | SUP   |      |   |
-// |      |     |     |      |      |      |    | X|    |     |      |       |       |      |   |
-//              |     |      |      |      |    | X|    |     |      |       |       |
+// |      |     |     |      |      |      |    | X|    |     | SDN  |       | SUP   |      |   |
+//              |     |      |      |      |    | X|    |     |      |       |       | 
             bindings = <
-&none &none &none  &none  &none  &none                   &kp LT      &kp DQT    &kp SQT     &kp GT       &none &none
-&none &none &none  &none  &none  &none                   &kp LPAR    &kp DQT    &kp SQT     &kp RPAR  &none &none
-&none &none &none  &none  &none  &none                   &kp LBKT    &kp DQT    &kp SQT     &kp RBKT     &none &none
-&none &none &none  &none  &none  &none      &none  &none &kp LBRC    &kp DQT    &kp SQT     &kp RBRC     &none &none
+&none &none &none  &none  &none  &none                   &none LT      &kp DQT    &kp SQT     &none      &none &none
+&none &none &none  &none  &none  &none                   &none LPAR    &kp DQT    &kp SQT     &none      &none &none
+&none &none &none  &none  &none  &none                   &none LBKT    &kp DQT    &kp SQT     &none     &none &none
+&none &none &none  &none  &none  &none      &none  &none &none LBRC    &kp DQT    &kp SQT     &none     &none &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
             >;
@@ -169,16 +169,16 @@
         arrows_layer {
             display-name = "arrows";
 // ------------------------------------------------------------------------------------------------------------
-// |      |     |     |      |      |      |            |     | RET  |  up   | BACKSP| DOCK |   |
-// |      |     |     |      |      |      |            |     | left |  down | right | RSHFT|   |
-// |      |     |     |      |      |      |            |     | SDN  |       | SUP   |      |   |
-// |      |     |     |      |      |      |    | X|    |     |      |       |       |      |   |
-//              |     |      |      |      |    | X|    |     |      |       |       |
+// |      |     |     |      |      |      |            |     |      |         |         |          |       |
+// |      |     |     |      |      |      |            |     | RET  |  up     |   BACKSP|   DOCK   |       |
+// |      |     |     |      |      |      |            |     | left |  down   |   right |   RSHFT  |       |
+// |      |     |     |      |      |      |    | X|    |     | SDN  |         |   SUP   |          |       |
+//              |     |      |      |      |    | X|    |     |      |         |         |
             bindings = <
-&none &none &none  &none  &none  &none                   &none &kp RET    &kp UP     &kp BSPC   &alt_ctrl_esc &none
-&none &none &none  &none  &none  &none                   &none &kp LEFT   &kp DOWN   &kp RIGHT    &kp RSHFT &none
-&none &none &none  &none  &none  &none                   &none &kp DQT    &kp SQT    &kp RBKT     &none &none
-&none &none &none  &none  &none  &none      &none  &none &none &kp DQT    &kp SQT    &kp RBRC     &none &none
+&none &none &none  &none  &none  &none                   &none &none   &none     &none      &none     &none
+&none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &alt_ctrl_esc &none
+&none &none &none  &none  &none  &none                   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
+&none &none &none  &none  &none  &none      &none  &none &none &kp PG_DN &none   &kp PG_UP  &none     &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
             >;
