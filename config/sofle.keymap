@@ -30,6 +30,13 @@
     cs-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
 };
 
+&mmv {
+    x-input-code = <INPUT_REL_X>;
+    y-input-code = <INPUT_REL_Y>;
+    time-to-max-speed-ms = <50>;
+    acceleration-exponent = <5>;
+};
+
 / {
     
    // Activate ADJUST layer by pressing raise and lower
