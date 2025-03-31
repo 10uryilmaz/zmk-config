@@ -20,7 +20,7 @@
 #define MOUSE 5
 #define ARROWS 6
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 100000
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 3500
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #include <dt-bindings/zmk/pointing.h>
@@ -36,12 +36,12 @@
 &mmv {
     x-input-code = <INPUT_REL_X>;
     y-input-code = <INPUT_REL_Y>;
-    time-to-max-speed-ms = <400>;
-    acceleration-exponent = <10>;
+    time-to-max-speed-ms = <100>;
+    acceleration-exponent = <3>;
 };
 
  &mmv_input_listener {
-    input-processors = <&zip_xy_scaler 1 30>;
+    input-processors = <&zip_xy_scaler 1 1>;
 };
 
 / {
