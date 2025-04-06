@@ -194,13 +194,13 @@
 // |Trans |     |     |      |      |      |            |     |      |         |         |          |       |
 // |      |     |     |      |      |      |            |     | RET  |  up     |   BACKSP|   DOCK   |       |
 // |      |     |     |      |      |      |            |     | left |  down   |   right |   RSHFT  |       |
-// |      |     |     |      |      |      |    | X|    |     | SDN  |         |   SUP   |          |       |
-//              |     |      |      |      |    | X|    |     |      |         |         |
+// |      |     |     |      | LTAB | RTAB |    | X|    |     | SDN  |         |   SUP   |          |       |
+//              |     |      | BACK | FWD  |    | X|    |     |      |         |         |
             bindings = <
-&trans &none &none  &none  &none  &none                   &none &none   &none     &none      &none     &none
+&trans &none &none  &none &none  &none      &none &none   &none     &none      &none     &none
 &none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
-&none &none &none  &none  &none  &none                   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
-&none &none &none  &none  &none  &none      &none  &none &none &kp PG_DN &none   &kp PG_UP  &none     &none
+&none &none &none  &none  &kp LC(LO(LEFT))  &kp LC(LO(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
+&none &none &none  &none  &kp LC(LBKT) &kp LC(RBKT) &none  &none &none &kp PG_DN &none &kp PG_UP &none &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
             >;
