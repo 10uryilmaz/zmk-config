@@ -57,6 +57,31 @@
 
     behaviors {
  //       to use it add &alt_ctrl_esc in keybinding
+
+  cmd_opt_right: macro {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <
+            &macro_press &kp LC &kp LO
+            &macro_tap &kp RIGHT
+            &macro_release &kp LO &kp LC
+        >;
+    };
+
+    cmd_opt_left: macro {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <
+            &macro_press &kp LC &kp LO
+            &macro_tap &kp LEFT
+            &macro_release &kp LO &kp LC
+        >;
+    };
+    
         alt_ctrl_esc: macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;  /* Must match the binding definition */
@@ -199,7 +224,7 @@
             bindings = <
 &trans &none &none  &none &none  &none      &none &none   &none     &none      &none     &none
 &none &none &none  &none  &none  &none                   &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
-&none &none &none  &none  &kp "LC(LO(LEFT))"  &kp "LC(LO(RIGHT))"   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
+&none &none &none  &none  &cmd_opt_left  &cmd_opt_right   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
 &none &none &none  &none  &kp LC(LBKT) &kp LC(RBKT) &none  &none &none &kp PG_DN &none &kp PG_UP &none &none
 
             &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
