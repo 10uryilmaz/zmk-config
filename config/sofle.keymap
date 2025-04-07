@@ -57,7 +57,7 @@
 
     behaviors {
  //       to use it add &alt_ctrl_esc in keybinding
-        alt_ctrl_esc: macro {
+        alt_ctrl_esc: alt_ctrl_esc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;  /* Must match the binding definition */
         wait-ms = <0>;
@@ -68,7 +68,7 @@
                 &macro_release &kp LCTRL &kp LALT
             >;
         };
-                vscode_left_editor: macro {
+        vscode_left_editor: vscode_left_editor {
             compatible = "zmk,behavior-macro";
             label = "VSCODE_LEFT_EDITOR";
             #binding-cells = <0>;
@@ -81,7 +81,7 @@
             >;
         };
 
-        vscode_right_editor: macro {
+        vscode_right_editor: vscode_right_editor {
             compatible = "zmk,behavior-macro";
             label = "VSCODE_RIGHT_EDITOR";
             #binding-cells = <0>;
