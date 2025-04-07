@@ -83,7 +83,7 @@
         vscode_right_editor: vscode_right_editor {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;\\\\\\\\\\\\
+            wait-ms = <0>;
             tap-ms = <0>;
             bindings = <
                 &macro_press   &kp LGUI &kp K
