@@ -45,7 +45,7 @@
 //};
 
 / {
-    
+
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -74,11 +74,9 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = <
-                &macro_press   &kp LGUI
-                &macro_tap     &kp K
-                &macro_release &kp LGUI
-                &macro_wait_time 10
+                &macro_press   &kp LGUI &kp K
                 &macro_tap     &kp LEFT
+                &macro_release     &kp LGUI &kp K
             >;
         };
 
@@ -88,11 +86,9 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings = <
-                &macro_press   &kp LGUI
-                &macro_tap     &kp K
-                &macro_release &kp LGUI
-                &macro_wait_time 10
+                &macro_press   &kp LGUI &kp K
                 &macro_tap     &kp RIGHT
+                &macro_release     &kp LGUI &kp K
             >;
         };
     };
@@ -189,7 +185,7 @@
 &none &none &none  &none  &none  &none                   &kp LPAR    &kp DQT    &kp SQT     &kp RPAR      &none &none
 &none &none &none  &none  &none  &none                   &kp LBKT    &kp DQT    &kp SQT     &kp RBKT     &none &none
 &none &none &none  &none  &none  &none      &none  &none &kp LBRC    &kp DQT    &kp SQT     &kp RBRC     &none &none
-            &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
+            &none  &none  &none  &none      &none  &none &none  &none   &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_DN C_BRI_UP >;
@@ -202,14 +198,14 @@
 // |      |     |     |      |      |      |            |     | lclck|  up   | rclck |      |   |
 // |      |     |     |      |      |      |            |     | left |  down | right |lclck |   |
 // |      |     |     |      |      |      |    | X|    |     | SDN  |       | SUP   |      |   |
-//              |     |      |      |      |    | X|    |     |      |       |       | 
+//              |     |      |      |      |    | X|    |     |      |       |       |
             bindings = <
 &none &none &none  &none  &none  &none                   &none  &none   &none   &none  &none &none
 &none &none &none  &none  &none  &none                   &none  &mkp LCLK       &mmv MOVE_UP &mkp RCLK &none &none
 &none &none &none  &none  &none  &none                   &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp LCLK &none
 &none &none &none  &none  &none  &none      &none  &none &none  &msc SCRL_UP  &none &msc SCRL_DOWN &none &none
 
-            &none  &none  &none  &none      &none  &none &none  &none   &none   &none 
+            &none  &none  &none  &none      &none  &none &none  &none   &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -229,7 +225,7 @@
 &none &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
     &none &none &none  &none  &kp LG(LBKT) &kp LG(RBKT) &none  &none &none &kp PG_DN &none &kp PG_UP &none &none
 
-            &none  &none  &none  &kp LG(DOT)      &none  &none &none  &none   &none   &none 
+            &none  &none  &none  &kp LG(DOT)      &none  &none &none  &none   &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
