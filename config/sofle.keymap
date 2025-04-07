@@ -76,7 +76,7 @@
             tap-ms = <0>;
             bindings = <
                 &kp LG(K)
-                &wait-ms 10
+                &wait-ms  <10>
                 &kp LEFT
             >;
         };
@@ -89,7 +89,7 @@
             tap-ms = <0>;
             bindings = <
                 &kp LG(K)
-                &wait-ms 10
+                &wait-ms  <10>
                 &kp RIGHT
             >;
         };
