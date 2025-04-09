@@ -43,6 +43,10 @@
 &kp LC(LEFT) {
     tapping-term-ms = <200>;
 };
+
+&kp LC(RIGHT) {
+    tapping-term-ms = <200>;
+};
  //&mmv_input_listener {
  //   input-processors = <&zip_xy_scaler 1 1>;
 //};
