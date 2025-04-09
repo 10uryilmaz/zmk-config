@@ -39,14 +39,6 @@
     time-to-max-speed-ms = <500>;
     acceleration-exponent = <3>;
 };
-
-&kp LC(LEFT) {
-    tapping-term-ms = <200>;
-};
-
-&kp LC(RIGHT) {
-    tapping-term-ms = <200>;
-};
  //&mmv_input_listener {
  //   input-processors = <&zip_xy_scaler 1 1>;
 //};
@@ -96,6 +88,30 @@
                 &macro_press   &kp LGUI &kp K
                 &macro_tap     &kp RIGHT
                 &macro_release     &kp LGUI &kp K
+            >;
+        };
+
+         desktop_right: desktop_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_press   &kp LCTRL
+                &macro_tap     &kp RIGHT
+                &macro_release     &kp LCTRL
+            >;
+        };
+
+        desktop_left: desktop_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <
+                &macro_press   &kp LCTRL
+                &macro_tap     &kp LEFT
+                &macro_release     &kp LCTRL
             >;
         };
     };
@@ -232,7 +248,7 @@
 &none &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
     &none &none &none  &none  &kp LG(LBKT) &kp LG(RBKT) &none  &none &none &kp PG_DN &none &kp PG_UP &none &none
 
-            &none  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LG(DOT)      &none  &none &none  &none   &none   &none
+            &none  &desktop_left  &desktop_right  &kp LG(DOT)      &none  &none &none  &none   &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp  C_BRI_DN C_BRI_UP>;
