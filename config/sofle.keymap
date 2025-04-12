@@ -238,13 +238,13 @@
             display-name = "arrows";
 // ------------------------------------------------------------------------------------------------------------
 // |Trans |     |     |      |      |      |            |     |      |         |         |          |       |
-// |Trans |     |     |      |LPANE |RPANE |            |     | RET  |  up     |   BACKSP|   DOCK   |       |
+// |CMD TB|     |     |      |LPANE |RPANE |            |     | RET  |  up     |   BACKSP|   DOCK   |       |
 // |Trans |     |     |      | LTAB | RTAB |            |     | left |  doywn   |   right |         |      |
 // |Trans |CMD Z|CMD X|CMD C |CMD V | CMD B|    | X|    |     | SDN  |         |   SUP   |          | Trans |
 //              |Trans| BACK |  FWD | TERM |    |X|Trans|     |      |         |         |
             bindings = <
 &trans &none &none  &none  &desktop_left  &desktop_right     &none &none   &none     &none      &none     &none
-&trans &none &none  &none  &vscode_left_editor  &vscode_right_editor &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
+&kp LG(TAB) &none &none  &none  &vscode_left_editor  &vscode_right_editor &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
 &trans &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
     &trans &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp LG(B) &none  &none &none &kp PG_DN &none &kp PG_UP &none &trans
 
