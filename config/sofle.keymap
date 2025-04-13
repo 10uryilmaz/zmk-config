@@ -57,6 +57,22 @@
 
     behaviors {
  //       to use it add &alt_ctrl_esc in keybinding
+ inc_dec_rgb: inc_dec {
+            compatible = "zmk,behavior-inc-dec";
+            label = "RGB brightness inc/dec";
+            // The “increment” call
+            binding-inc = <&rgb_ug RGB_BRI>;
+            // The “decrement” call
+            binding-dec = <&rgb_ug RGB_BRD>;
+        };
+
+        inc_dec_ug: inc_dec {
+            compatible = "zmk,behavior-inc-dec";
+            label = "Underglow brightness inc/dec";
+            binding-inc = <&bl BL_INC>;
+            binding-dec = <&bl BL_DEC>;
+        };
+
         alt_ctrl_esc: alt_ctrl_esc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;  /* Must match the binding definition */
@@ -194,7 +210,10 @@
 &none             &none           &none           &none           &none           &rgb_ug RGB_SPI         &rgb_ug RGB_TOG &bl BL_TOG  &none &none &none &none &none &none
                                   &none           &none           &none           &rgb_ug RGB_SPD         &none           &none  &none &none &none &none
             >;
-            sensor-bindings = <&rgb_ug RGB_BRI RGB_BRD &bl BL_DEC BL_INC>;
+               sensor-bindings = <
+        &inc_dec_rgb
+        &inc_dec_ug
+    >;
         };
 
         chars_layer {
