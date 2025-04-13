@@ -180,6 +180,7 @@
         };
 
         adjust_layer {
+            display-name = "adjust";
 // ----------------------------------------------------------------------------------------------------------------------------
 // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
 // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -194,6 +195,8 @@
 &none             &bl BL_DEC      &bl BL_INC      &none           &none           &rgb_ug RGB_SPI         &rgb_ug RGB_TOG &bl BL_TOG  &none &none &none &none &none &none
                                   &none           &none           &none           &rgb_ug RGB_SPD         &none           &none  &none &none &none &none
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         chars_layer {
