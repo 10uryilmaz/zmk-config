@@ -57,22 +57,6 @@
 
     behaviors {
  //       to use it add &alt_ctrl_esc in keybinding
- inc_dec_rgb: inc_dec_rgb {
-            compatible = "zmk,behavior-inc-dec";
-            label = "RGB brightness inc/dec";
-            // The “increment” call
-            binding-inc = <&rgb_ug RGB_BRI>;
-            // The “decrement” call
-            binding-dec = <&rgb_ug RGB_BRD>;
-        };
-
-        inc_dec_ug: inc_dec_ug {
-            compatible = "zmk,behavior-inc-dec";
-            label = "Underglow brightness inc/dec";
-            binding-inc = <&bl BL_INC>;
-            binding-dec = <&bl BL_DEC>;
-        };
-
         alt_ctrl_esc: alt_ctrl_esc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;  /* Must match the binding definition */
@@ -200,20 +184,16 @@
 // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
 // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
 // |        | RGB_BRD | RGB_BRI |         |         | RGB_EFR |                  |      |      |       |      |       |       |
-// |        |         |         |         |         | RGB_SPI | RGB_TOG | |BL_TOG|      |      |       |      |       |       |
+// |        | BL_DEC  | BL_INC  |         |         | RGB_SPI | RGB_TOG | |BL_TOG|      |      |       |      |       |       |
 //                    |         |         |         | RGB_SPD |         | |      |      |      |       |      |
             display-name = "adjust";
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
 &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
 &none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &rgb_ug RGB_EFR                         &none &none &none &none &none &none
-&none             &none           &none           &none           &none           &rgb_ug RGB_SPI         &rgb_ug RGB_TOG &bl BL_TOG  &none &none &none &none &none &none
+&none             &bl BL_DEC      &bl BL_INC      &none           &none           &rgb_ug RGB_SPI         &rgb_ug RGB_TOG &bl BL_TOG  &none &none &none &none &none &none
                                   &none           &none           &none           &rgb_ug RGB_SPD         &none           &none  &none &none &none &none
             >;
-               sensor-bindings = <
-        &inc_dec_rgb
-        &inc_dec_ug
-    >;
         };
 
         chars_layer {
