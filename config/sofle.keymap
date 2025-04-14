@@ -22,7 +22,7 @@
 #define ARROWS 6
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3500
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 50
 
 #include <dt-bindings/zmk/pointing.h>
 
