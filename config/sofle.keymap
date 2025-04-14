@@ -22,7 +22,7 @@
 #define ARROWS 6
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3500
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 #include <dt-bindings/zmk/pointing.h>
 
@@ -238,14 +238,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // |Trans |     |     |      |      |      |            |     |      |         |         |          |       |
 // |CMD TB|     |     |      |LPANE |RPANE |            |     | RET  |  up     |   BACKSP|   DOCK   |       |
-// |Trans |     |     |      | LTAB | RTAB |            |     | left |  doywn   |   right |         |      |
-// |Trans |CMD Z|CMD X|CMD C |CMD V | CMD B|    | X|    |     | SDN  |         |   SUP   |          | Trans |
+// |Trans |     |     |      | LTAB | RTAB |            |     | left |  doywn  |   right |         |      |
+// |Trans |CMD Z|CMD X|CMD C |CMD V | CMD B|    | X|    |     |MO SDN|         |  MO SUP |          | Trans |
 //              |Trans| BACK |  FWD | TERM |    |X|Trans|     |      |         |         |
             bindings = <
 &trans &none &none  &none  &desktop_left  &desktop_right     &none &none   &none     &none      &none     &none
 &kp LG(TAB) &none &none  &none  &vscode_left_editor  &vscode_right_editor &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
 &trans &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
-    &trans &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp LG(B) &none  &none &none &kp PG_DN &none &kp PG_UP &none &trans
+    &trans &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp LG(B) &none  &none &none &msc SCRL_DOWN &none &msc SCRL_UP &none &trans
 
             &none  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(DOT)  &none  &trans &none  &none   &none   &none
             >;
