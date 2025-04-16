@@ -238,16 +238,16 @@
 // ------------------------------------------------------------------------------------------------------------
 // |Trans |     |     |      |      |      |            |     |      |         |         |         |       |
 // |CMD TB|     |     |      |LPANE |RPANE |            |     | RET  |  up     |   BACKSP|   DOCK  |       |
-// |Trans |     |     |      | LTAB | RTAB |            |     | left |  doywn  |   right |         |       |
-// |Trans |CMD Z|CMD X|CMD C |CMD V | CMD B|    | X|    |     |MO LCLICK| MO SUP|MO RCLICK|        | Trans |
-//              |Trans| BACK |  FWD | TERM |    |X|Trans|     |      |   MO SDN|         |
+// |Trans |     |     |      | LTAB | RTAB |            |MO SUP| left |  doywn  |   right |        |       |
+// |Trans |CMD Z|CMD X|CMD C |CMD V | CMD B|    | X|    |MO SDN|MO LCLICK|      |MO RCLICK|         | Trans |
+//              |Trans| BACK |  FWD | TERM |    |X|Trans|     |      |         |         |
             bindings = <
 &trans &none &none  &none  &desktop_left  &desktop_right     &none &none   &none     &none      &none     &none
 &kp LG(TAB) &none &none  &none  &vscode_left_editor  &vscode_right_editor &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
-&trans &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))   &none &kp LEFT &kp DOWN &kp RIGHT  &none     &none
-&trans &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp LG(B) &none  &none &none &mkp LCLK &msc SCRL_DOWN &mkp RCLK &none &trans
+&trans &none &none  &none  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))    &msc SCRL_DOWN &kp LEFT &kp DOWN &kp RIGHT   &none  &none
+&trans &kp LG(Z) &kp LG(X)  &kp LG(C)  &kp LG(V) &kp LG(B) &none  &none &msc SCRL_UP &mkp LCLK &none &mkp RCLK &none  &trans
 
-            &none  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(DOT)  &none  &trans &none  &none   &msc SCRL_UP  &none
+            &none  &kp LG(LBKT)  &kp LG(RBKT)  &kp LG(DOT)  &none  &trans &none  &none   &none &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp  C_BRI_DN C_BRI_UP>;
