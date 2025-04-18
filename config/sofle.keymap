@@ -111,41 +111,6 @@
                 <&macro_tap     &kp RIGHT>,
                 <&macro_release &kp LCTRL>;
         };
-
-        /* config/sofle.keymap ― inside the `behaviors { ... }` block */
-
-/* put this inside your `behaviors { ... }` block */
-
-shift_hold: shift_hold {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    wait-ms = <0>;
-    tap-ms  = <0>;
-    bindings = <
-        &macro_press   &kp LSHIFT
-        &macro_release &kp LSHIFT
-    >;
-};
-
-        /* 2 ── tap‑side action: toggle Caps‑Lock long enough for every OS */
-        caps_toggle: caps_toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms  = <250>;           /* macOS/iPadOS ignore ultra‑short taps */
-            bindings = <
-                &macro_tap &kp CAPS
-            >;
-        };
-
-caps_shift_modtap: caps_shift_modtap {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;          /* ← MUST be 2  (const in the binding) */
-    flavor            = "hold-preferred";   /* Shift arms instantly       */
-    tapping-term-ms   = <150>;              /* adjust if taps feel tight  */
-    bindings = <&kp LSHIFT>, <&kp CAPS>;    /* hold‑action , tap‑action   */
-};
-
     };
 
 
@@ -164,7 +129,7 @@ caps_shift_modtap: caps_shift_modtap {
 &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                           &kp H  &kp J     &kp K    &kp L    &kp SEMI &kp RET
-&caps_shift_modtap 0 0   &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp LS(CAPS)  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                    &kp LCTRL &kp LALT &mo 3 &kp LGUI &lt 6 SPACE    &lt 6  SPACE  &mo 4  &lt 5 TILDE  &lt 2 EQUAL  &kp BSLH
             >;
 
