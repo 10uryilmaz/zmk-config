@@ -111,26 +111,6 @@
                 <&macro_tap     &kp RIGHT>,
                 <&macro_release &kp LCTRL>;
         };
-        
-/* 1 ── send a 200 ms Caps‑Lock tap */
-caps_delay: caps_delay {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    wait-ms = <0>;
-    tap-ms = <200>;          /* many hosts ignore ultra‑short Caps taps */
-    bindings = <
-        &macro_tap &kp CAPS  /* one macro stage is enough */
-    >;
-};
-
-/* 2 ── hold = Shift, tap = Caps‑Lock (via the macro above) */
-caps_hold_shift: caps_hold_shift {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>;
-    flavor = "balanced";     /* or hold‑preferred / tap‑preferred       */
-    tapping-term-ms = <200>;
-    bindings = <&kp LSHFT &caps_delay>;  /* one *combined* array ✔︎ */
-};
 
 
     keymap {
@@ -148,7 +128,7 @@ caps_hold_shift: caps_hold_shift {
 &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                           &kp H  &kp J     &kp K    &kp L    &kp SEMI &kp RET
-&caps_hold_shift &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp LS(CAPS) &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                    &kp LCTRL &kp LALT &mo 3 &kp LGUI &lt 6 SPACE    &lt 6  SPACE  &mo 4  &lt 5 TILDE  &lt 2 EQUAL  &kp BSLH
             >;
 
