@@ -114,16 +114,18 @@
 
         /* config/sofle.keymap ― inside the `behaviors { ... }` block */
 
-  shift_hold: shift_hold {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms  = <0>;             /* no “tap” phase here */
-            bindings = <
-                &macro_press   &kp LSHIFT   /* press Shift on key‑down  */
-                &macro_release &kp LSHIFT   /* release on key‑up        */
-            >;
-        };
+/* put this inside your `behaviors { ... }` block */
+
+shift_hold: shift_hold {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <0>;
+    tap-ms  = <0>;
+    bindings = <
+        &macro_press   &kp LSHIFT
+        &macro_release &kp LSHIFT
+    >;
+};
 
         /* 2 ── tap‑side action: toggle Caps‑Lock long enough for every OS */
         caps_toggle: caps_toggle {
@@ -139,11 +141,10 @@
         /* 3 ── put them together in a hold‑tap (mod‑tap) */
 caps_shift_modtap: caps_shift_modtap {
     compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;          /* ← must be 2 (const in the binding) */
+    #binding-cells = <2>;          /* ← required: binding file says const 2 */
     flavor = "balanced";
     tapping-term-ms = <180>;
-    bindings = <&kp LSHIFT>, <&caps_toggle>;
-            /*  hold action    ,    tap action  */
+    bindings = <&shift_hold>, <&caps_toggle>;   /* no extra numbers here */
 };
 
     };
