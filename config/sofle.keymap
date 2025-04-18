@@ -140,11 +140,10 @@ shift_hold: shift_hold {
 
 caps_shift_modtap: caps_shift_modtap {
     compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";   /* ← was "balanced" */
-    tapping-term-ms = <180>;     /* keep or tweak */
-    bindings = <&shift_hold>, <&caps_toggle>;
-};ings = <&shift_hold>, <&caps_toggle>;   /* no extra numbers here */
+    #binding-cells = <2>;          /* ← MUST be 2  (const in the binding) */
+    flavor            = "hold-preferred";   /* Shift arms instantly       */
+    tapping-term-ms   = <150>;              /* adjust if taps feel tight  */
+    bindings = <&kp LSHIFT>, <&kp CAPS>;    /* hold‑action , tap‑action   */
 };
 
     };
