@@ -134,8 +134,8 @@
             bindings = <
 &kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                           &kp H  &kp J     &kp K    &kp L    &kp SEMI &kp RET
-&mt LSHFT CAPS  &kp Z  &kp X    &kp C    &kp V     &lt 7 B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp TAB   &kp A  &kp S    &kp D    &kp F     &lt 7  G                           &kp H  &kp J     &kp K    &kp L    &kp SEMI &kp RET
+&mt LSHFT CAPS  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                    &kp LCTRL &kp LALT &mo 3 &kp LGUI &lt 6 SPACE    &lt 6  SPACE  &mo 4  &lt 5 TILDE  &kp EQUAL  &kp BSLH
             >;
 
@@ -264,17 +264,17 @@
         numpad_layer { 
             display-name = "numpad";
  // ------------------------------------------------------------------------------------------------------------
- // |      |     |     |      |      |      |            |   |     |      |       |     |       |
- // |      |     |     |      |      |      |            | + |  7  |   8  |   9   |     |       |
- // |      |     |     |      |      |      |            | - |  4  |   5  |   6   |     |       |
- // |      |     |     |      |      |      |    | X|    | * |  1  |   2  |   3   | .   |       |
- //              |     |      |      |      | | X|RET | / |  0  |      |       |
+ // |      |     |     |      |      |      |               |   |   |     |     |     |     |
+ // |      |     |     |      |      |      |               |   | 7 |  8  |  9  |  BS |     |
+ // |      |     |     |      |      | ---  |               |   | 4 |  5  |  6  |     |     |
+ // |      |     |     |      |      |      |    | X|       |   | 1 |  2  |  3  |     |     | 
+ //              |     |      |      |      |    | X|   RET |   | 0 |  .  |     |     
             bindings = <
- &trans &trans &trans &trans &trans &trans                           &trans    &trans &trans  &trans &trans  &trans
- &trans &trans &trans &trans &trans &trans                           &kp PLUS  &kp N7 &kp N8  &kp N9 &trans  &trans
- &trans &trans &trans &trans &trans &trans                           &kp MINUS &kp N4 &kp N5  &kp N6 &trans  &trans
- &trans &trans &trans &trans &trans &trans &trans            &trans  &kp ASTRK &kp N1 &kp N2  &kp N3 &kp DOT &trans
-               &trans &trans &trans &trans &trans            &kp RET &kp BSLH  &kp N0 &none  &none
+ &trans &trans &trans &trans &trans &trans                           &trans    &trans &trans  &trans &trans    &trans
+ &trans &trans &trans &trans &trans &trans                           &trans    &kp N7 &kp N8  &kp N9 &kp BKSPC &trans
+ &trans &trans &trans &trans &trans &trans                           &trans    &kp N4 &kp N5  &kp N6 &trans    &trans
+ &trans &trans &trans &trans &trans &trans &trans            &trans  &trans    &kp N1 &kp N2  &kp N3 &trans    &trans
+               &trans &trans &trans &trans &trans            &kp RET &kp N0    &kp DOT &none  &none
              >;
 
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
