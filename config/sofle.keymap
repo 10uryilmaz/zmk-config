@@ -21,6 +21,7 @@
 #define MOUSE 5
 #define ARROWS 6
 #define NUMPAD 7
+#define CHARS 8
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3500
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 18
@@ -134,7 +135,7 @@
             bindings = <
 &kp ESC          &kp N1 &kp N2    &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &nonexx
 &kp ESC          &kp Q  &kp W     &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp MINUS
-&kp TAB          &kp A  &kp S     &kp D    &lt 4 F   &lt 7  G                         &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp TAB          &kp A  &kp S     &lt 8 D    &lt 4 F   &lt 7  G                         &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 &mt LSHFT CAPS   &kp Z  &kp X     &kp C    &kp V     &kp B     &kp C_BRI_MIN &kp C_MUTE      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                         &kp LCTRL &kp LALT &mo 3     &kp LGUI &lt 6 SPACE    &lt 6  SPACE  &mo 4  &lt 5 TILDE  &kp EQUAL  &kp BSLH
             >;
@@ -176,7 +177,7 @@
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans
-            >;,
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
@@ -275,6 +276,27 @@
  &trans &trans &trans &trans &trans &trans                           &trans    &kp N4 &kp N5  &kp N6 &trans    &trans
  &trans &trans &trans &trans &trans &trans &trans            &trans  &trans    &kp N1 &kp N2  &kp N3 &trans    &trans
                &trans &trans &trans &trans &trans            &kp RET &kp N0    &kp DOT &none  &none
+             >;
+
+             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+         };
+
+
+
+        chars_layer { 
+            display-name = "chars";
+ // ------------------------------------------------------------------------------------------------------------
+ // |      |     |     |      |      |      |               |   |   |     |     |     |     |
+ // |      |     |     |      |      |      |               | @ | & |  !  |  \  |  ~  | BSPC|
+ // |      |     |     |      |      | ---  |               | = | + |  -  |  *  |  /  |     |
+ // |      |     |     |      |      |      |    | X|       | | | # |  $  |  %  |  ^  |     | 
+ //              |     |      |      |      |    | X|       |   |   |     |     |     
+            bindings = <
+ &trans &trans &trans &trans &trans &trans                   &trans    &trans   &trans    &trans    &trans    &trans
+ &trans &trans &trans &trans &trans &trans                   &kp AT    &kp AMPS &kp EXCL  &kp BSLH  &kp TILDE &BSPC
+ &trans &trans &trans &trans &trans &trans                   &kp EQUAL &kp PLUS &kp MINUS &kp ASTRK &kp FSLH  &trans
+ &trans &trans &trans &trans &trans &trans &trans    &trans  &kp EXCL  &kp HASH &kp DLLR  &kp PRCNT &kp CARET &trans
+               &trans &trans &trans &trans &trans    &trans  &none    &kp DOT &none  &none
              >;
 
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
