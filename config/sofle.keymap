@@ -293,7 +293,7 @@
  //              |     |      |      |      |    | X|       |   |   |     |     |     
             bindings = <
  &trans &trans &trans &trans &trans &trans                   &trans    &trans   &trans    &trans    &trans    &trans
- &trans &trans &trans &trans &trans &trans                   &kp AT    &kp AMPS &kp EXCL  &kp BSLH  &kp TILDE &BSPC
+ &trans &trans &trans &trans &trans &trans                   &kp AT    &kp AMPS &kp EXCL  &kp BSLH  &kp TILDE &kp BSPC
  &trans &trans &trans &trans &trans &trans                   &kp EQUAL &kp PLUS &kp MINUS &kp ASTRK &kp FSLH  &trans
  &trans &trans &trans &trans &trans &trans &trans    &trans  &kp EXCL  &kp HASH &kp DLLR  &kp PRCNT &kp CARET &trans
                &trans &trans &trans &trans &trans    &trans  &none    &kp DOT &none  &none
