@@ -243,11 +243,11 @@
         arrows_layer {
             display-name = "arrows";
 // ------------------------------------------------------------------------------------------------------------
-// |Trans |     |      |       |      |      |            |     |      |         |         |         |       |
-// |Trans |     |LFOCUS|RFOCUS |LDESK |RDESK |            |     | RET  |  up     |   BACKSP|   DOCK  |       |
-// |CMD TB|     |      |TER/EDI| LTAB | RTAB |            |MO SUP| left |  doywn  |   right |        |       |
-// |Trans |CMD Z|CMD X |CMD C  |CMD V | CMD B|    | X|    |MO SDN|MO LCLICK|      |MO RCLICK|         | Trans |
-//              |Trans | BACK  |  FWD |      |    |X|Trans|     |      |         |         |
+// |Trans |     |      |       |      |      |            |       |           |         |           |         |       |
+// |Trans |     |LFOCUS|RFOCUS |LDESK |RDESK |            |       | RET       |  up     |    BACKSP |   DOCK  |       |
+// |CMD TB|     |      |TER/EDI| LTAB | RTAB |            |MO SUP | left      |  doywn  |    right  |         |       |
+// |Trans |CMD Z|CMD X |CMD C  |CMD V | CMD B|    | X|    |MO SDN |MO LCLICK  |         | MO RCLICK |         | Trans |
+//              |Trans | BACK  |  FWD |      |    |X|Trans|       |           |         |           |
             bindings = <
 &trans &none &none  &none  &none  &none     &none &none   &none     &none      &none     &none
 &trans &none &vscode_left_editor  &vscode_right_editor  &desktop_left  &desktop_right &none &kp RET &kp UP    &kp BSPC   &kp LC(LA(ESC)) &none
